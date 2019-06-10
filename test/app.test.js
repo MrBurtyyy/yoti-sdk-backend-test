@@ -203,4 +203,38 @@ describe("Test the hoover path", () => {
         done();
       });
   });
+
+  test("End to end test 10 (only one value for room size)", done => {
+    const payload = {
+      roomSize: [25],
+      coords: [12, 13],
+      patches: [[12, 14], [17, 12], [22, 18], [1, 1]],
+      instructions: ""
+    };
+
+    request(app)
+      .post("/hoover")
+      .send(payload)
+      .then(response => {
+        expect(response.statusCode).toBe(400);
+        done();
+      });
+  });
+
+  test("End to end test 11 (only one value for coords size)", done => {
+    const payload = {
+      roomSize: [25, 25],
+      coords: [12],
+      patches: [[12, 14], [17, 12], [22, 18], [1, 1]],
+      instructions: ""
+    };
+
+    request(app)
+      .post("/hoover")
+      .send(payload)
+      .then(response => {
+        expect(response.statusCode).toBe(400);
+        done();
+      });
+  });
 });

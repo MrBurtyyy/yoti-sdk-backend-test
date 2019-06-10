@@ -6,13 +6,17 @@ const HooverSchema = {
       type: "array",
       items: {
         type: "number"
-      }
+      },
+      minItems: 2,
+      maxItems: 2
     },
     coords: {
       type: "array",
       items: {
         type: "number"
-      }
+      },
+      minItems: 2,
+      maxItems: 2
     },
     patches: {
       type: "array",
