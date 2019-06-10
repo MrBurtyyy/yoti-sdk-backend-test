@@ -4,7 +4,8 @@
   "description": "Application code for the Yoti SDK Backend Test",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/index.js",
+    "test": "jest test/*"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,10 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "lodash": "^4.17.11"
+    "express-json-validator-middleware": "^2.0.0",
+    "jest": "^24.8.0",
+    "lodash": "^4.17.11",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
