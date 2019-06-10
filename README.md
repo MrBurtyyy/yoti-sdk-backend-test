@@ -39,3 +39,20 @@ An example curl request would be:
 ```bash
 curl -X POST -H "Content-Type: application/json" "http://localhost:8080/hoover" -d @data.json
 ```
+
+# Testing
+
+A suite of end-to-end and unit tests have been written for this application. To run the tests, execute the following command:
+
+```bash
+npm run test
+```
+
+This uses `jest` and `supertest` to run mock API calls using a variety of data to test the robustness of the system.
+
+# Assumptions
+
+Some assumptions around the challenge have been made and are listed below:
+
+- The `instructions` and `patches` fields are not required for the application to run (tests created to confirm this)
+- If the hoover's starting position is on a patch of dirt, this dirt is counted in the final count.
