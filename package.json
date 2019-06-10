@@ -23,6 +23,7 @@
     "express-json-validator-middleware": "^2.0.0",
     "jest": "^24.8.0",
     "lodash": "^4.17.11",
+    "sqlite3": "^4.0.8",
     "supertest": "^4.0.2"
   },
   "devDependencies": {
