@@ -1,0 +1,6 @@
+{
+    "input": {
+        "createCommand": "CREATE TABLE hoover.input (
+        id varchar(255) PRIMARY KEY(id)"
+    }
+}
