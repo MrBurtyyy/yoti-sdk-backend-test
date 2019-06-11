@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   res.status(200);
   res.send();
 });
-app.get("/latest", (req, res, next) => {
+app.get("/hoover/all", (req, res, next) => {
   routes
     .getLatestHoover()
     .then(response => {
