@@ -1,3 +1,5 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://mongo:27017/hoover", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_URL || "mongodb://localhost:27017/hoover", {
+  useNewUrlParser: true
+});

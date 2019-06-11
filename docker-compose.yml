@@ -6,5 +6,7 @@ services:
       - "8080:8080"
     volumes:
       - ./src:/usr/src/app/src
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/hoover
   mongo:
     image: "mongo:4.1-bionic"

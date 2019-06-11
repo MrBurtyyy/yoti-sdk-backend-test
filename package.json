@@ -8,6 +8,9 @@
     "dev": "nodemon src/index.js",
     "test": "jest test/ --verbose"
   },
+  "jest": {
+    "preset": "@shelf/jest-mongodb"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MrBurtyyy/yoti-sdk-backend-test.git"
@@ -29,6 +32,8 @@
     "supertest": "^4.0.2"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.0.1",
+    "mongo-unit": "^1.4.4",
     "nodemon": "^1.19.1"
   }
 }

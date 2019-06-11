@@ -28,7 +28,8 @@ const HooverSchema = {
       }
     },
     instructions: {
-      type: "string"
+      type: "string",
+      pattern: "^[NnEeSsWw>]*$" // Pattern to only match N,W,S or W (upper and lowercase)
     }
   }
 };
