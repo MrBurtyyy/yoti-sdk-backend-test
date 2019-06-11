@@ -1,3 +1,7 @@
+// Before we start the application, initialise the database as it's required before we start
+const databaseController = require("./db/databaseController");
+databaseController.initDatabase();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 

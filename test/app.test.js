@@ -1,6 +1,6 @@
 const request = require("supertest");
 const app = require("../src/app");
-const { MongoClient } = require("mongodb");
+const databaseController = require("../src/db/databaseController");
 
 describe("Test the root path", () => {
   test("It should return a 200 status code", done => {
@@ -14,19 +14,12 @@ describe("Test the root path", () => {
 });
 
 describe("Test the hoover path", () => {
-  let connection;
-  let db;
-
-  beforeAll(async () => {
-    connection = await MongoClient.connect(global.__MONGO_URI__, {
-      useNewUrlParser: true
-    });
-    db = await connection.db(global.__MONGO_DB_NAME__);
+  beforeAll(() => {
+    databaseController.initDatabase();
   });
 
-  afterAll(async () => {
-    await connection.close();
-    await db.close();
+  afterAll(() => {
+    mongod.close();
   });
   test("End to end test 1 (valid data)", done => {
     const payload = {
