@@ -7,28 +7,22 @@ Application code for the Yoti SDK Backend Test written by Alex Burt
 Clone the application code from this repository:
 
 ```bash
-https://github.com/MrBurtyyy/yoti-sdk-backend-test.git
+git clone https://github.com/MrBurtyyy/yoti-sdk-backend-test.git
+cd yoti-sdk-backend-test
 ```
 
-The version of Node.js used in development is `v10.15.3`
-
-Navigate into the directory and run:
-
-```bash
-npm install
-```
+The version of Docker used in development is `2.0.0.0-mac81 (29211)`
 
 # Running the application
 
-For ease of use, `Nodemon` is used to run the web service as ES6 syntax is used and would require transpiling to run natively using Node.
-
-To run the application, run the following command:
+A Docker service has been defined using docker-compose. To run the application, use the following command:
 
 ```bash
-npm start
+docker-compose up
 ```
 
-This will start a nodemon process running the web-service. The web-service runs on port `8080`
+This will download and build the relevant images. The web-service will be built from the Dockerfile stored in the directory.
+All of the relevant ports are exposed (8080 for the web-service). The port for the MongoDB is not exposed (only to be used by the web-service).
 
 # Usage
 
@@ -42,13 +36,15 @@ curl -X POST -H "Content-Type: application/json" "http://localhost:8080/hoover" 
 
 # Testing
 
-A suite of end-to-end and unit tests have been written for this application. To run the tests, execute the following command:
+A suite of end-to-end and unit tests have been written for this application. To run the tests, execute the following commands:
 
 ```bash
+npm install
 npm run test
 ```
 
 This uses `jest` and `supertest` to run mock API calls using a variety of data to test the robustness of the system.
+In order to facilitate database connections, an in-memory version of MongoDB is used with the `@shelf/jest-mongodb` preset.
 
 # Assumptions
 
