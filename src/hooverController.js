@@ -1,8 +1,4 @@
 const _ = require("lodash");
-const databaseController = require("./databaseController");
-
-databaseController.ensureTableExists("input");
-databaseController.ensureTableExists("output");
 
 const getValidPosition = (roomX, roomY, hooverX, hooverY) => {
   let newHooverX = hooverX;

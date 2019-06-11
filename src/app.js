@@ -12,16 +12,6 @@ const validate = validator.validate;
 const routes = require("./routes");
 const { HooverSchema } = require("./schemas");
 
-// Initialise the database connection before setting up
-// the Express server, as it relies on it.
-const databaseController = require("./databaseController");
-// try {
-//   databaseController.initialiseDatabase();
-// } catch (err) {
-//   console.log(err);
-//   process.exit(1);
-// }
-
 const app = express();
 
 app.use(bodyParser.json());
@@ -29,6 +19,14 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => {
   res.status(200);
   res.send();
+});
+app.get("/latest", (req, res, next) => {
+  routes
+    .getLatestHoover()
+    .then(response => {
+      res.send(response);
+    })
+    .catch(next);
 });
 app.post("/hoover", validate({ body: HooverSchema }), (req, res, next) => {
   routes
