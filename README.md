@@ -11,7 +11,7 @@ git clone https://github.com/MrBurtyyy/yoti-sdk-backend-test.git
 cd yoti-sdk-backend-test
 ```
 
-The version of Docker used in development is `2.0.0.0-mac81 (29211)`
+The version of Docker used in development is `18.09.0`
 
 # Running the application
 
