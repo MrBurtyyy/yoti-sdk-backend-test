@@ -42,44 +42,22 @@ curl "http://localhost:8080/hoover/all"
 
 This will return a JSON formatted array with the following document structure:
 
-````json
+```json
 {
-    "_id": "5d00ebe2239e760021c9e05c",
-    "input": {
-        "roomSize": [
-            5,
-            5
-        ],
-        "coords": [
-            1,
-            2
-        ],
-        "patches": [
-            [
-                1,
-                0
-            ],
-            [
-                2,
-                2
-            ],
-            [
-                2,
-                3
-            ]
-        ],
-        "_id": "5d00ebe2239e760021c9e05d",
-        "instructions": "NNESEESWNWW"
-    },
-    "output": {
-        "coords": [
-            1,
-            3
-        ],
-        "_id": "5d00ebe2239e760021c9e05e",
-        "patches": 1
-    },
-    "__v": 0
+  "_id": "5d00ebe2239e760021c9e05c",
+  "input": {
+    "roomSize": [5, 5],
+    "coords": [1, 2],
+    "patches": [[1, 0], [2, 2], [2, 3]],
+    "_id": "5d00ebe2239e760021c9e05d",
+    "instructions": "NNESEESWNWW"
+  },
+  "output": {
+    "coords": [1, 3],
+    "_id": "5d00ebe2239e760021c9e05e",
+    "patches": 1
+  },
+  "__v": 0
 }
 ```
 
@@ -90,7 +68,7 @@ A suite of end-to-end and unit tests have been written for this application. To 
 ```bash
 npm install
 npm run test
-````
+```
 
 This uses `jest` and `supertest` to run mock API calls using a variety of data to test the robustness of the system.
 In order to facilitate database connections, an in-memory version of MongoDB is used with the `@shelf/jest-mongodb` preset.
