@@ -2,7 +2,7 @@
 
 Application code for the Yoti SDK Backend Test written by Alex Burt
 
-[![Build Status](https://travis-ci.com/MrBurtyyy/yoti-sdk-backend-test.svg?branch=master)](https://travis-ci.com/MrBurtyyy/yoti-sdk-backend-test)
+![Build Status](https://travis-ci.com/MrBurtyyy/yoti-sdk-backend-test.svg?branch=master) ![Coverage Status](https://coveralls.io/repos/github/MrBurtyyy/yoti-sdk-backend-test/badge.svg?branch=master)
 
 # Installation
 
