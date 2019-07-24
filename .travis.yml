@@ -10,6 +10,6 @@ jobs:
     - stage: Test
       node_job: "10"
       before_install: npm install -g npm@latest
-      install: npm ci
+      install: npm install
       script:
         - npm test
