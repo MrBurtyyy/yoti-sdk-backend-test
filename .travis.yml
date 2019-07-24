@@ -1,0 +1,15 @@
+language: node_js
+
+cache: npm
+
+git:
+  depth: 1
+
+jobs:
+  include:
+    - stage: Test
+      node_job: "10"
+      before_install: npm install -g npm@latest
+      install: npm ci
+      script:
+        - npm test
